@@ -10,9 +10,9 @@ class CheckResponseBodyAndExtract extends Simulation{
 
   val scn = scenario("Check with JSON path")
 
-  exec(http("Get specific game")
+  .exec(http("Get specific game")
     .get("/videogame/1")
-    .check(jsonPath(path = "$.name").is(expected = "Resident Evil 4")))
+    .check(jsonPath("$.name").is("Resident Evil 4")))
 
 
   setUp(
