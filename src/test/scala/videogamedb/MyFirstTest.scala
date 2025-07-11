@@ -5,19 +5,19 @@ import io.gatling.http.Predef._
 
 class MyFirstTest extends Simulation{
 
-  // 1 Http Configuration
-  val httpProtocol = http.baseUrl("https://videogamedb.uk/api")
-    .acceptHeader("application/json")
+  //1 Http Configuration
+  val httpProtocol = http.baseUrl(url = "https://videogamedb.uk/api")
+    .acceptHeader(value ="application/json")
 
-  // 2 Scenario Definition
-  val scn = scenario("My First Test")
-    .exec(http("Get all games")
+  //2 Scenario Definition
+  val scn = scenario(name = "My First Test")
+    .exec(http(requestName = "Get all games")
     .get("/videogame"))
 
 
-  // 3 Load Scenario
+  //3 Load Scenario
   setUp(
-    scn.inject(atOnceUsers(1))
+    scn.inject(atOnceUsers(users = 1))
   ).protocols(httpProtocol)
 
 }

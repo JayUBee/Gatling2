@@ -1,0 +1,10 @@
+{
+  "simulation": "videogamedb.ScriptFundamentals.AddPauseTime",
+  "simulationId": "addpausetime-20250711101503924",
+  "start": 1752228904297,
+  "description": "ok",
+  "scenarios": ["Video Game DB - 3 calls"],
+  "assertions": [
+
+  ]
+}

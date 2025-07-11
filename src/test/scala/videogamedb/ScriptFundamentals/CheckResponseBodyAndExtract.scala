@@ -1,0 +1,22 @@
+package videogamedb.ScriptFundamentals
+
+import io.gatling.core.Predef._
+import io.gatling.http.Predef._
+
+class CheckResponseBodyAndExtract extends Simulation{
+
+  val httpProtocol = http.baseUrl("https://videogamedb.uk/api")
+    .acceptHeader("application/json")
+
+  val scn = scenario("Check with JSON path")
+
+  exec(http("Get specific game")
+    .get("/videogame/1")
+    .check(jsonPath(path = "$.name").is(expected = "Resident Evil 4")))
+
+
+  setUp(
+    scn.inject(atOnceUsers(1))
+  ).protocols(httpProtocol)
+
+}

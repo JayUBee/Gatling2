@@ -1,0 +1,10 @@
+{
+  "simulation": "videogamedb.ScriptFundamentals.CheckResponseBodyAndExtract",
+  "simulationId": "checkresponsebodyandextract-20250710234851267",
+  "start": 1752191331734,
+  "description": "test+debug",
+  "scenarios": ["Check with JSON path"],
+  "assertions": [
+
+  ]
+}
